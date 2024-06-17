@@ -6,7 +6,11 @@ function App() {
 
   return (
     <div className="App">
-      <p>{JSON.stringify(response?.data, null, 4)}</p>
+      {response.isPending ? (
+        <p>Loading ....</p>
+      ) : (
+        <p>{JSON.stringify(response?.data, null, 4)}</p>
+      )}
     </div>
   );
 }
